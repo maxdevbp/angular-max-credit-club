@@ -32,10 +32,9 @@ _creditcards :Array<ICreditCard> = [
   expirationDate: new Date('01/10/2021'),
   cardNumber:'1234567890121107'
   },
-
   ]
 
-  firstName: string ;
+  firstName: string;
   lastName: string;
   expirationDate: Date;
   cardNumber: string;
@@ -45,8 +44,6 @@ _creditcards :Array<ICreditCard> = [
     this.lastName = card.lastName;
     this.expirationDate = new Date(card.expirationDate)
     this.cardNumber = card.cardNumber
-
-  
 
     console.log(card)
   }
@@ -61,6 +58,7 @@ _creditcards :Array<ICreditCard> = [
     console.log(this._creditcards)
    // form.reset()
   }
+
 
 
 

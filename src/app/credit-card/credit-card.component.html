@@ -11,13 +11,15 @@
     </tr>
     <tr *ngFor="let card of service._creditcards">
       <td> {{card.firstName}} </td>
-      <td> {{card.lastName}} </td>
+      <td > {{card.lastName}} </td>
       <td> {{card.expirationDate | date: 'MM/yy'}} </td>
       <td> {{card.cardNumber}} </td>
-      <td> <button (click)="edit();service.editCard(card)">Edit</button> </td>
+      <td> <button [class.btnEdit]="editClicked" (click)="edit();service.editCard(card)">Edit</button> </td>
     </tr>
     <tr *ngIf="editClicked">
+      <td colspan="5">
       <app-update-card></app-update-card>
+      </td>
     </tr>
   </table>
 

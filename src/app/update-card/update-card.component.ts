@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CreditCardService} from '../credit-card/credit-card.service'
 
 @Component({
   selector: 'app-update-card',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: CreditCardService) { }
 
   ngOnInit() {
   }

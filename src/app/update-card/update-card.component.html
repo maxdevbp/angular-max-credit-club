@@ -1,5 +1,5 @@
 <div class="container" style="text-align:center" >
-  <h1>Add New Card</h1>
+  <h1>Edit Card</h1>
 <form #addCardForm="ngForm" (ngSubmit)="service.addNewCard(addCardForm)">
   <div>
   <label>First Name</label>
@@ -27,7 +27,7 @@
   required="required">
   </div>
   <div>
-    <button type="submit" [disabled]="!addCardForm.valid">הוסף כרטיס</button>
+    <button  type="submit" [disabled]="!addCardForm.valid">Update</button>
   </div>
 </form>
 
