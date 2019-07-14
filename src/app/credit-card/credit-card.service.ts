@@ -36,6 +36,12 @@ _creditcards :Array<ICreditCard> = [
 
   ]
 
+  addNewCard(form){
+    this._creditcards.push(form.value)
+  }
+
+
+
 public creditCards$ = new Observable<ICreditCard[]>((observer)=> {
     
     // observable execution
