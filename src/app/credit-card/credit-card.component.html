@@ -1,4 +1,4 @@
-<h1>CreditCard</h1>
+<h1>Credit Card List</h1>
 
 
 <div>
@@ -14,34 +14,12 @@
       <td> {{card.lastName}} </td>
       <td> {{card.expirationDate | date: 'MM/yy'}} </td>
       <td> {{card.cardNumber}} </td>
-      
+      <td> <button (click)="edit();service.editCard(card)">Edit</button> </td>
+    </tr>
+    <tr *ngIf="editClicked">
+      <app-update-card></app-update-card>
     </tr>
   </table>
 
 </div>
 
-<div style="text-align:center">
-  <h1>Add New Card</h1>
-<form #addCardForm="ngForm" (ngSubmit)="service.addNewCard(addCardForm)">
-  <div>
-  <label>First Name</label>
-  <input type="text" name="firstName" #firstName [(ngModel)]="service.firstName">
-  </div>
-  <div>
-    <label>Last Name</label>
-  <input type="text" name="lastName" #lastName [(ngModel)]="service.lastName">
-  </div>
-  <div>
-    <label>Expiration Date</label>
-  <input type="text" name="expirationDate" #expirationDate [(ngModel)]="service.expirationDate">
-  </div>
-  <div>
-    <label>Card Number</label>
-  <input type="text" name="cardNumber" #cardNumber [(ngModel)]="service.cardNumber">
-  </div>
-  <div>
-    <button type="submit">הוסף כרטיס</button>
-  </div>
-</form>
-
-</div>

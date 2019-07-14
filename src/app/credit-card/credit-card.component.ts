@@ -9,7 +9,11 @@ import {CreditCardService} from './credit-card.service'
 })
 export class CreditCardComponent implements OnInit {
 
+  editClicked = false
 
+  edit(){
+    this.editClicked = !this.editClicked
+  }
 
 
   constructor(public service: CreditCardService) { }

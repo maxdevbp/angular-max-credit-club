@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs'
+
 export interface ICreditCard {
-  firstName: string;
+firstName: string;
   lastName: string;
   expirationDate: Date;
   cardNumber: string;
-
-
 }
 @Injectable()
 export class CreditCardService {
@@ -36,8 +35,31 @@ _creditcards :Array<ICreditCard> = [
 
   ]
 
+  firstName: string ;
+  lastName: string;
+  expirationDate: Date;
+  cardNumber: string;
+
+  editCard(card){
+    this.firstName = card.firstName
+    this.lastName = card.lastName;
+    this.expirationDate = new Date(card.expirationDate)
+    this.cardNumber = card.cardNumber
+
+  
+
+    console.log(card)
+  }
+
   addNewCard(form){
-    this._creditcards.push(form.value)
+    // let newCard = new Observable<ICreditCard>((observe) => {
+    //   observe.next(this._creditcards.push(form.value))
+    // });
+    let newCard = form.value
+    this._creditcards.push(newCard)
+    console.log(form.value)
+    console.log(this._creditcards)
+   // form.reset()
   }
 
 
@@ -48,6 +70,8 @@ public creditCards$ = new Observable<ICreditCard[]>((observer)=> {
     observer.next(this._creditcards)
     observer.complete()
 })
+
+
   constructor() { }
   /**
    * For test, fake HTTP Request
