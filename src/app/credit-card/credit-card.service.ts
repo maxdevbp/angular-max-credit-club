@@ -10,7 +10,7 @@ export interface ICreditCard {
 }
 @Injectable()
 export class CreditCardService {
-_creditcards :Array<ICreditCard> = [
+private _do_not_touch :Array<ICreditCard> = [
   {  
   firstName: 'Moty',
   lastName:'Chohen',
@@ -39,7 +39,7 @@ _creditcards :Array<ICreditCard> = [
 public creditCards$ = new Observable<ICreditCard[]>((observer)=> {
     
     // observable execution
-    observer.next(this._creditcards)
+    observer.next(this._do_not_touch)
     observer.complete()
 })
   constructor() { }
