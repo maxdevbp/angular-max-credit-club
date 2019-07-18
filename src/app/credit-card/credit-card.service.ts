@@ -47,6 +47,7 @@ public creditCards$ = new Observable<ICreditCard[]>((observer)=> {
    * For test, fake HTTP Request
    */
 public getCreditCards(){
+  // replace this.http.get('someurl');
   return this.creditCards$;
 }
 }

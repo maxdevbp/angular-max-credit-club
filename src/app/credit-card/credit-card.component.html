@@ -1,3 +1,52 @@
 <h1>CreditCard</h1>
+{{creditCards}}
+<table>
+<thead>
+<th>Credit</th>
 
 
+</thead>
+  <tbody>
+    <th>firstName</th>
+    <th>lastName</th>
+    <th>expirationDate</th>
+    <th>cardNumber</th>
+  <tr *ngFor="let credit of credits">
+    <td>{{credit.firstName}}</td>
+    <td>{{credit.lastName}}</td>
+    <td>{{credit.expirationDate | date  }}</td>
+      <td>{{credit.cardNumber}}</td>
+  </tr>
+</tbody>
+</table>
+
+
+
+<div>
+
+<form [formGroup]="profileForm">
+  
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+    <label>
+    Last Name:
+    <input type="text" formControlName="expirationDate">
+  </label>
+    <label>
+    Last Name:
+    <input type="text" formControlName="cardNumber">
+  </label>
+  <p>
+  <button (click)="addCard()">Add card</button>
+</p>
+
+</form>
+
+</div>
