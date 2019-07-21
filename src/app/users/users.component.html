@@ -1,1 +1,31 @@
 <h3>Users</h3>
+
+<table style="width:100%" >
+  <tr>
+    <th>id</th>
+    <th>first name</th>
+    <th>last name</th>
+    <th>email</th> 
+    <th>avatar</th>
+  </tr>
+  <tr *ngFor="let s of users">
+    <td>{{s.id}}</td>
+    <td>{{s.first_name}}</td>
+    <td>{{s.last_name}}</td>
+    <td>{{s.id}}</td>
+    <td>{{s.email}}</td> 
+    <td><img src="{{s.avatar}}"></td>
+  </tr>
+
+</table>
+
+<form [formGroup]="nestedForm" (ngSubmit)="print(nestedForm.value)" >
+  <label>id</label>
+  <input formControlName='id'><br>
+  <label>email</label>
+   <input formControlName='email'><br>
+   <label>avatar</label>
+    <input formControlName='avatar'><br>
+<button type="submit" [disabled]='!nestedForm.valid'>{{nestedForm.status}}</button>
+</form>
+
