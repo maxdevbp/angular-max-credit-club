@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-users',
@@ -12,12 +13,20 @@ export class UsersComponent implements OnInit {
 
   list: any ;
 
-  ngOnInit() {
-    debugger
-    this.service.getUsers().subscribe( data => this.list =  data);
-    JSON.stringify(this.list)
 
-    console.log(this.list);
+  ngOnInit() {
+    this.service.getUsers().subscribe( data => {
+      this.list =  data.data;
+      console.log(data)});
   }
+
+  usersForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl('')
+  });
+prin(form){
+console.log(form)
+}
 
 }

@@ -1,1 +1,20 @@
-<h3>Users</h3>
+<tr *ngFor="let elem of list" > 
+  <td> {{elem.first_name}}</td>
+  <td> {{elem.last_name}}</td>
+  <td> {{elem.email}}</td>
+  <td><img src="{{elem.avatar}}">
+</tr>
+
+<form [formGroup]="usersForm">
+  
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+<button onclick="print(usersForm)"> clik </button> 
+</form>
