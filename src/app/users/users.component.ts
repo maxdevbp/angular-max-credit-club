@@ -7,11 +7,13 @@ import { UsersService } from './users.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
+  users = [];
   constructor(private service: UsersService) { }
 
   ngOnInit() {
-    
+    this.service.getUsers().subscribe((data: any[]) => {
+      this.users = data.slice();
+    })
   }
 
 }
